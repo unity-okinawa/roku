@@ -1,0 +1,21 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Character Controllers\Sources\Scripts\_clone.js">
+    <Files>
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\PlatformInputController.js" Line="42" Column="44" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\_clone.js" Line="16" Column="20" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\CharacterMotor.js" Line="340" Column="28" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\_sita.js" Line="29" Column="1" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js" Line="193" Column="54" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\_atari.js" Line="38" Column="1" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\_point.js" Line="13" Column="30" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\rokuhira_h\Documents\New Unity Project 3\Assets\_atari.js" line="10" />
+      <Breakpoint file="C:\Users\rokuhira_h\Documents\New Unity Project 3\Assets\_atari.js" line="16" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
