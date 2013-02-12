@@ -51,7 +51,6 @@ print(this.name);
 				if (obj.name != this.name) {
 					obj.GetComponent(_atari).atari = false;
 					obj.collider.isTrigger = true;
-print(obj.name);
 				}
 			}
 		} else {
@@ -60,7 +59,6 @@ print(obj.name);
 				if (obj.name != this.name) {
 					obj.GetComponent(_atari).atari = false;
 					obj.collider.isTrigger = true;
-print(obj.name);
 				}
 			}
 		}
