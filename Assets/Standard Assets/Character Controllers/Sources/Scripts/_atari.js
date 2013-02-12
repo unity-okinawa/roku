@@ -16,13 +16,13 @@ function Update () {
 		oyaObj.transform.position.x = this.transform.position.x;
 		//キャラ移動
 		if (oyaObj.transform.position.y < this.transform.position.y) {
-			oyaObj.transform.position.y = oyaObj.transform.position.y + oyaObj.transform.position.y * 0.09f;
+			oyaObj.transform.position.y = oyaObj.transform.position.y + 0.2f;
 		} else {
 			oyaObj.transform.position.y = this.transform.position.y;
 		}
 		//カメラ移動
 		if (cameraObj.transform.position.y < this.transform.position.y + 2.5) {
-			cameraObj.transform.position.y = cameraObj.transform.position.y + this.transform.position.y * 0.008f;
+			cameraObj.transform.position.y = cameraObj.transform.position.y +  0.09f;
 		} else {
 			cameraObj.transform.position.y = this.transform.position.y + 2.5;
 		}
