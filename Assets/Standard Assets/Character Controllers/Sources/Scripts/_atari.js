@@ -31,6 +31,7 @@ function Update () {
 function OnTriggerEnter(other: Collider )
 {
 	if (!atari && other.name == "Cylinder-sita") {
+print(this.name);
 		//ポイントインクリメント
 		var point = pointObj.GetComponent(_point).point;
 		point = point + 1;
@@ -44,11 +45,23 @@ function OnTriggerEnter(other: Collider )
 		atari = true;
 
 		var obj : GameObject;
-		for (var i = 1; i < 9; i++) {
-			obj = gameObject.Find("obj" + i);
-			if (obj.name != this.name) {
-				obj.GetComponent(_atari).atari = false;
-				obj.collider.isTrigger = true;
+		if (this.transform.position.y / 4 % 2 != 1 ) {
+			for (var i = 1; i < 5; i++) {
+				obj = gameObject.Find("obj" + i);
+				if (obj.name != this.name) {
+					obj.GetComponent(_atari).atari = false;
+					obj.collider.isTrigger = true;
+print(obj.name);
+				}
+			}
+		} else {
+			for (i = 5; i < 9; i++) {
+				obj = gameObject.Find("obj" + i);
+				if (obj.name != this.name) {
+					obj.GetComponent(_atari).atari = false;
+					obj.collider.isTrigger = true;
+print(obj.name);
+				}
 			}
 		}
 					
