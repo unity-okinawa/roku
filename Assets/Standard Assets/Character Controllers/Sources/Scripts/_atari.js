@@ -16,7 +16,7 @@ function Update () {
 		oyaObj.transform.position.x = this.transform.position.x;
 		//キャラ移動
 		if (oyaObj.transform.position.y < this.transform.position.y) {
-			oyaObj.transform.position.y = oyaObj.transform.position.y + 0.2f;
+			oyaObj.transform.position.y = oyaObj.transform.position.y + 0.3f;
 		} else {
 			oyaObj.transform.position.y = this.transform.position.y;
 		}
