@@ -18,6 +18,9 @@ function Update () {
 		if (oyaObj.transform.position.y < this.transform.position.y) {
 			oyaObj.transform.position.y = oyaObj.transform.position.y + 0.3f;
 		} else {
+			if (oyaObj.transform.position.y != this.transform.position.y) {
+				isTrigger(true);
+			}
 			oyaObj.transform.position.y = this.transform.position.y;
 		}
 		//カメラ移動
@@ -31,39 +34,34 @@ function Update () {
 function OnTriggerEnter(other: Collider )
 {
 	if (!atari && other.name == "Cylinder-sita") {
-print(this.name);
-		//ポイントインクリメント
-		var point = pointObj.GetComponent(_point).point;
-		point = point + 1;
+		isAtari(false);
+		//ポイント
+		var point = this.transform.position.y / 4;
 		pointObj.GetComponent(_point).point = point;
-		pointObj.guiText.text = "point:" + this.transform.position.y / 4;
+		pointObj.guiText.text = "point:" + point;
 
 		//舌の親取得
 		oyaObj = other.transform.parent.gameObject; 
 		oyaObj.GetComponent(CharacterMotor).enabled=false;
 		this.collider.isTrigger = false;
 		atari = true;
-
-		var obj : GameObject;
-		if (this.transform.position.y / 4 % 2 != 1 ) {
-			for (var i = 1; i < 5; i++) {
-				obj = gameObject.Find("obj" + i);
-				if (obj.name != this.name) {
-					obj.GetComponent(_atari).atari = false;
-					obj.collider.isTrigger = true;
-				}
-			}
-		} else {
-			for (i = 5; i < 9; i++) {
-				obj = gameObject.Find("obj" + i);
-				if (obj.name != this.name) {
-					obj.GetComponent(_atari).atari = false;
-					obj.collider.isTrigger = true;
-				}
-			}
-		}
-					
 	}
 }
-
-
+function isTrigger(flg) {
+	var obj : GameObject;
+	for (var i = 1; i < 9; i++) {
+		obj = gameObject.Find("obj" + i);
+		if (obj.name != this.name) {
+			obj.collider.isTrigger = flg;
+		}
+	}
+}
+function isAtari(flg) {
+	var obj : GameObject;
+	for (var i = 1; i < 9; i++) {
+		obj = gameObject.Find("obj" + i);
+		if (obj.name != this.name) {
+			obj.GetComponent(_atari).atari = flg;
+		}
+	}
+}
