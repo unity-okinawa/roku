@@ -1,22 +1,23 @@
 #pragma strict
 
-var objects : GameObject[] = new GameObject[10];
+var objects : GameObject[] = new GameObject[0];
 var objects_count = 0;
 function Start () {
 }
 function Update () {
 	if(Input.GetKeyUp(KeyCode.Space)){
 		
-		if (objects_count < 11) {
-
+		if (objects_count < 20) {
 			
 			for(var i = 0; i < objects.length; i++) {
 				if (objects[i] == null) {
 					
 					var boll = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+					boll.name = this.name + "_boll";
 					boll.gameObject.AddComponent("Rigidbody");
+					boll.gameObject.AddComponent(_atari2);
 					boll.transform.rigidbody.freezeRotation = true;
-					boll.transform.localScale = Vector3(1, 1, 0.1); 
+					boll.transform.localScale = Vector3(1, 1, 0.1);
 					if (this.transform.position.x > 0 ) {
 						boll.transform.position = Vector3(7.9, 1.6, 0); 
 						boll.transform.rigidbody.AddForce(Vector3(-400, 400, 0));
@@ -33,7 +34,7 @@ function Update () {
 		}
 	}
 	for(i = 0; i < objects.length; i++) {
-		if (objects[i] != null && objects[i].transform.position.y < 0) {
+		if (objects[i] != null && objects[i].transform.position.y < 0.6) {
 			Destroy(objects[i]);
 			objects_count = objects_count -1;
 		}
